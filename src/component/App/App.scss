@@ -1,0 +1,41 @@
+html{
+  min-height:100%;/* make sure it is at least as tall as the viewport */
+  position:relative;
+}
+body{
+  height:100%; /* force the BODY element to match the height of the HTML element */
+}
+
+.container-fluid {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  z-index:-1;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.page {
+  padding-top: 49px;
+  padding-left: 0;
+  padding-right: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+}
+
+.under-title {
+  text-align: center;
+  color: rgb(216, 216, 216);
+}
+
+.col {
+  padding: 0;
+}

@@ -1,0 +1,19 @@
+.tabs {
+  position: -webkit-sticky;
+  position: sticky;
+  background: white;
+  z-index: 1000;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap !important;
+
+  @media (max-width: 400px) {
+    overflow-x: scroll;
+    margin-top: 5px
+  }
+
+  .nav {
+    flex-wrap: nowrap !important;
+  }
+}

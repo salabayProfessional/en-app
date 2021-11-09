@@ -1,0 +1,41 @@
+.navbar-nav {
+  font-size: 22px;
+}
+
+.header-fixed {
+  position: fixed;
+  width: 100%;
+  opacity: 1;
+  z-index: 1111;
+  display: block;
+
+  .link-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.edit-panel {
+  display: none;
+}
+
+.edit-panel.active-edit {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(209, 209, 209);
+  position: sticky;
+  display: block;
+  border-radius: 0px 10px 10px 10px;
+  margin-left: 40px;
+}
+
+.hide {
+  @media (max-width: 400px) {
+    display: none !important;
+  }
+}
+
+.toggle-mobile {
+  margin-left: 85%;
+}

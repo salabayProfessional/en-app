@@ -1,0 +1,23 @@
+.timer {
+  text-align: center;
+  width: 200px;
+  color: snow;
+  margin-top: 5%;
+  display: block;
+  padding: 5px;
+  position: absolute;
+  animation-name: open;
+  animation-duration: 0.5s;
+  z-index: 101;
+  background-color: #02b875;
+}
+
+@keyframes open {
+  from {
+      margin-top: -10%;
+  }
+
+  to {
+      margin-top: 5%;
+  }
+}

@@ -1,0 +1,16 @@
+.row-wrapper {
+  display: flex;
+
+  .left {
+    left: 0;
+  }
+
+  .fixed {
+    position: fixed;
+    right: 0;
+
+    @media (max-width: 724px) {
+      position: static;
+    }
+  }
+}

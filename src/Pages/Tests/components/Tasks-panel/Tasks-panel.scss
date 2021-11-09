@@ -1,0 +1,12 @@
+.tasks-panel {
+  width: 300px;
+  position: absolute;
+  height: 724px;
+  left: 150;
+  overflow-y: scroll;
+}
+
+.task__item:hover {
+  background: rgb(37, 82, 85);
+  transition: 0.5s;
+}

@@ -1,0 +1,10 @@
+.proposition {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .proposition__item {
+    text-align: start;
+    margin-top: 50px;
+  }
+}

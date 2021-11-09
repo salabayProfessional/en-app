@@ -1,0 +1,36 @@
+export const mockTests = [
+  {
+    name: "A@#ASas",
+    words: [
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+    ],
+    type: "en-ua",
+    from: "random",
+  },
+  {
+    name: "A@#ASasD",
+    words: [
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+      {en: "undo", ua: "скасувати"},
+    ],
+    type: "en-ua",
+    from: "random",
+  },
+];

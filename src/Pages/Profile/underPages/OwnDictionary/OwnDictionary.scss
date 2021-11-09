@@ -1,0 +1,28 @@
+.own-tabs {
+  display: flex;
+  justify-content: start;
+  height: 30px;
+  position: relative;
+}
+
+.option {
+  cursor: pointer;
+}
+
+.tab-item {
+  padding: 5px;
+}
+
+.table-scroll {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.word-info {
+  padding: 10px;
+}

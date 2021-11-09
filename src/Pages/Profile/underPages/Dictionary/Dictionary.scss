@@ -1,0 +1,30 @@
+.dictionary {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  .dictionary-options {
+    width: 100%;
+    height: 100%;
+  }
+
+  .table-words {
+    padding: 10px;
+    width: 100%;
+    height: 650px;
+  }
+}
+
+.dictionary-options__party {
+  margin-top: 20px;  
+}
+
+.active-option {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.top-10 {
+  margin-top: 10px;
+}

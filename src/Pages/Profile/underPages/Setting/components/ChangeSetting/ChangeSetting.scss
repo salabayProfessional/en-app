@@ -1,0 +1,19 @@
+.change-setting {
+
+}
+
+.between {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: space-between;
+  height: 100%;
+}
+
+.photo {
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+}  

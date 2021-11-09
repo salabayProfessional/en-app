@@ -1,0 +1,25 @@
+.create-test {
+
+  .crete-test__inner {
+    display: flex;
+
+    @media (max-width: 400px) {
+      flex-direction: column;
+    }
+  
+    .left {
+      height: 600px;
+      overflow-y: auto;
+    }
+  
+    .right {
+      height: 600px;
+    }
+  
+    .between {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
