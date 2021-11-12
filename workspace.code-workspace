@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"name": "client",
+		"path": "../en/client"
+	},
+	{
+		"name": "en-app",
+		"path": "."
+	}
+],
+  "settings": {}
+}

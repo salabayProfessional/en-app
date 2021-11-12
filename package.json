@@ -2,6 +2,7 @@
   "name": "en-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://salabayprofessional.github.io/en-app/",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@reduxjs/toolkit": "^1.6.1",
@@ -25,6 +26,7 @@
     "formik": "^2.2.9",
     "formik_typescript_ui": "^2.0.4",
     "framer-motion": "^4.1.17",
+    "gh-pages": "^3.2.3",
     "git-flow": "^0.2.0",
     "node-sass": "^4.0.1",
     "normalize.css": "^8.0.1",
@@ -47,7 +49,9 @@
     "build": "react-scripts build",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

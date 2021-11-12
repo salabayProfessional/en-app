@@ -3,6 +3,7 @@ import { BTN_BG } from '../../classes';
 import { motion } from 'framer-motion';
 import './Proposition.scss';
 import propositionMock from '../../mockData/proposition';
+import { error } from 'console';
 
 const Proposition: React.FC = () => {
 
@@ -28,7 +29,7 @@ const Proposition: React.FC = () => {
         <li className="text-muted">Donec ullamcorper nulla non metus auctor fringilla.</li>
         <li className="text-muted">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</li>
         <li className="text-muted">Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-        <button className={BTN_BG}>BUY</button>
+        <button className={BTN_BG}  onClick={() => console.log(1 - 1-2)}>BUY</button>
       </ul>
     )
   })

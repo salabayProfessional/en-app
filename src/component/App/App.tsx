@@ -8,10 +8,12 @@ import Header from '../Header/Header';
 import Story from '../../Pages/Story/Story';
 import { Container } from 'reactstrap';
 import "./App.scss";
+import ErrorBoundry from '../ErrorBoudry/ErrorBoundry';
 
 const App: React.FC = () => {
 
   return (
+   <ErrorBoundry>
       <Router>
         <Header />
         <Switch>
@@ -25,6 +27,7 @@ const App: React.FC = () => {
           </Container>
         </Switch>
       </Router>
+   </ErrorBoundry>
   )
 }
 
