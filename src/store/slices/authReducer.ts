@@ -44,27 +44,33 @@ const auth = createSlice({
           ...state.dictionary[foundedPart].words.slice(foundedWord + 1, )
         ]
       },
+      setRole: (state, {payload}) => {
+        state.role = payload;
+      },
       add_home_work: (state, {payload}) => {
         state.homework = [...state.homework, payload];
       },
-      remove_home_work: (state, {payload}) => {
-        console.log(state, payload.name)
-      },
-      setRole: (state, {payload}) => {
-        state.role = payload;
-      }
     },
 });
 
-export const { 
+const { 
   log_out, 
   sign_in, 
   add_word_own_dictionary, 
   add_part_own_dictionary, 
   remove_word, 
   add_home_work,
-  remove_home_work,
   setRole,
 } = auth.actions;
+
+export { 
+  log_out, 
+  sign_in, 
+  add_word_own_dictionary, 
+  add_part_own_dictionary, 
+  remove_word, 
+  add_home_work,
+  setRole,
+};
 
 export default auth.reducer;

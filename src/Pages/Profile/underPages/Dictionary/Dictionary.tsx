@@ -1,39 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { shuffle } from '../../../../specialFunction/specialFunction';
 import DictionaryOptions from './components/DictionaryOptions/DictionaryOptions';
 import TableWords from './components/DictionaryPart/DictionaryPart';
 import "./Dictionary.scss";
 import Row from "../../../../component/Row/Row";
-import { useAppSelector } from "../../../../hooks/useRedux";
+import { useHomeWork } from '../../../../hooks/useHomeWork';
+
+interface DictionaryPart {
+  name: string, 
+  words: {
+    en: string, 
+    ua: string
+  }
+};
 
 const Dictionary: React.FC = () => {
   const [isList, setIsList] = useState(false);
   const toggleList = () => setIsList(!isList);
-  const dictionaries = useAppSelector((state) => state.dictionary.dictionaryTests);
-  const [activeDictionary, setActiveDictionary] = useState<any>(dictionaries[0]);
+  const homeWorks = useHomeWork();
+  const [activeHomeWork, setActiveHomeWork] = useState<any>();
   const [isHideColumnUa, setIsHideColumnUa] = useState(false);
   const [isHideColumnEn, setIsHideColumnEn] = useState(false);
+
   const toggleHideColumnUa = () => setIsHideColumnUa(!isHideColumnUa);
   const toggleHideColumnEn = () => setIsHideColumnEn(!isHideColumnEn);
-  const { register, handleSubmit, reset } = useForm();
-
-  interface DictionaryPart {name: string, words: {en: string, ua: string}}
-
-  const toggleActiveItem = (dictionary: DictionaryPart) => {
-    if(dictionary.name === activeDictionary) {
+  const setActiveNewItem = (dictionary: DictionaryPart) => {
+    if(dictionary.name === activeHomeWork) {
       return
     } else {
-      setActiveDictionary(dictionary);
+      setActiveHomeWork(dictionary);
     }
   }
 
-  const randomDictionaryWords = (activeDictionary: any) => {
-    setActiveDictionary({
-      name: activeDictionary.name, 
-      words: shuffle(activeDictionary.words)
-    });
-  };
+  const { register, handleSubmit, reset } = useForm();
+
+  useEffect(() => {
+    if(homeWorks) {
+      setActiveHomeWork(homeWorks[0]);
+    }
+  }, [homeWorks])
 
   const onSubmit = (data: any) => {
     console.log(data);
@@ -46,7 +51,7 @@ const Dictionary: React.FC = () => {
           Left={(
             <div className="table-words">
               <TableWords 
-                activeDictionary={activeDictionary} 
+                activeHomeWork={activeHomeWork} 
                 register={register}
                 isHideColumnUa={isHideColumnUa}
                 isHideColumnEn={isHideColumnEn}
@@ -56,13 +61,13 @@ const Dictionary: React.FC = () => {
           Right={(
             <DictionaryOptions 
                 isList={isList}
-                activeDictionary={activeDictionary}
-                randomDictionaryWords={randomDictionaryWords}
-                toggleActiveItem={toggleActiveItem}
+                activeHomeWork={activeHomeWork}
+                setActiveNewItem={setActiveNewItem}
                 toggleList={toggleList}
                 reset={reset}
                 toggleHideColumnUa={toggleHideColumnUa}
                 toggleHideColumnEn={toggleHideColumnEn}
+                homeWorks={homeWorks}
             />
           )}
           rightWidth={3}

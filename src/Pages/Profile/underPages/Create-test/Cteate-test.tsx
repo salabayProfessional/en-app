@@ -7,7 +7,6 @@ import Row from '../../../../component/Row/Row';
 import { allWords } from '../../../../mockData/words';
 import { generateString } from '../../../../specialFunction/specialFunction';
 import { add_home_work } from '../../../../store/slices/authReducer';
-import { add_dictionary_part } from '../../../../store/slices/dictionaryReducer';
 import { create_test } from '../../../../store/slices/testsReducer';
 import "./Create-test.scss";
 import { InitialValues } from './types';
@@ -141,22 +140,10 @@ const CreateTest: React.FC = () => {
                           color="success" 
                           type="button" 
                           onClick={() => {
-                            dispatch(add_home_work({title: values.name, words: splitWordsOnAnd(values.words as any)}));
+                            dispatch(add_home_work({name: values.name, words: splitWordsOnAnd(values.words as any)}));
                         }}
                         >
                           CREATE HOMEWORK
-                        </Button>
-                      </FormGroup>
-                      <FormGroup>
-                        <Button 
-                          className="form-control btn-bg" 
-                          color="success" 
-                          type="button" 
-                          onClick={() => {
-                            dispatch(add_dictionary_part({name: values.name, words: splitWordsOnAnd(values.words as any)}));
-                        }}
-                        >
-                          CREATE DICTIONARY
                         </Button>
                       </FormGroup>
                       <h6 className="title">Words selected: {values.words.length}</h6>

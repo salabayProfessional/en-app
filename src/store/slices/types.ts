@@ -50,17 +50,6 @@ export interface TestsReducer {
   allTests: any,
 };
 
-export interface StoryReducer {
-
-};
-export interface ProfileReducer {
-
-};
-
-export interface ProfileReducer {
-
-};
-
 export interface AuthReducer {
   authentication: boolean,
   role: "admin" | "free" | "super" | "expert",
@@ -71,16 +60,14 @@ export interface AuthReducer {
   describe: string,
   password: string,
   dictionary: { part: string, words: WordData[] }[],
-  homework: { title: string, words: {en: string, ua: string}[]}[]
+  homework: { name: string, words: {en: string, ua: string}[]}[] | [],
 }
 
 export interface RootReducer {
   tests: TestsReducer,
   options: OptionsReducer,
-  story: StoryReducer,
   result: ResultReducer,
   dictionary: DictionaryReducer,
-  profile: ProfileReducer,
   auth: AuthReducer,
 };
 

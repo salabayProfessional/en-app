@@ -1,5 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+const deleteElementFromArr = (start: number, end: number, arr: any) => {
+    return [...arr.slice(0, end), ...arr.slice(start + 1)];
+};
+
 const initialState: any = {
     dictionaryTests: [],
 }
@@ -12,9 +16,7 @@ const dictionary = createSlice({
             state.dictionaryTests.push(action.payload);
         },
         delete_dictionary_part: (state, action) => {
-            const start = state.dictionaryTests.slice(0, action.payload.id);
-            const end = state.dictionaryTests.slice(action.payload.id + 1);
-            state.dictionaryTests = [...start, ...end];
+            state.dictionaryTests = deleteElementFromArr(0, action.payload.id + 1, state.dictionaryTests);
         },
     },
     extraReducers: (state: any) => state

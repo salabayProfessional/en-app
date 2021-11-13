@@ -1,35 +1,33 @@
-import React, { useState } from 'react';
-import { ModalCreatedTest } from '../../../../../../component/Modal/Modals'
+import React from 'react';
 import { Table } from 'reactstrap';
+import { BTN_BG } from '../../../../../../classes';
 import { generateString } from '../../../../../../specialFunction/specialFunction';
 
 const DictionaryOptions: React.FC<any> = ({
   isList, 
-  activeDictionary, 
+  activeHomeWork, 
   toggleList, 
-  randomDictionaryWords,
-  toggleActiveItem,
+  setActiveNewItem,
   reset,
   toggleHideColumnUa,
-  toggleHideColumnEn
+  toggleHideColumnEn,
+  homeWorks
 }) => {
-  const [isModal, setIsModal] = useState(false);
-  const toggleIsModal = () => setIsModal(!isModal);
 
-  const list = activeDictionary?.map((item: any) => {
+  const list = homeWorks?.map((item: {name: string, words: []}) => {
     return (
       <>
-        <tbody onClick={() => toggleActiveItem(item)} key={generateString()}>
+        <tbody onClick={() => setActiveNewItem(item)} key={generateString()}>
           <tr>
             <th scope="row">
-              {item.name}
+              {item?.name}
             </th>
           </tr>
         </tbody>
        {
-         activeDictionary.name === item.name && (
+         activeHomeWork?.name === item?.name && (
           <div className="active-option">
-            <button className="btn btn-outline-success top-10" onClick={() => randomDictionaryWords(activeDictionary)}>RANDOM</button>
+            <button className="btn btn-outline-success top-10">RANDOM</button>
             <button className="btn btn-outline-success top-10" onClick={() => reset()}>CLEAR ANSWER</button>
             <button className="btn btn-outline-success top-10" onClick={() => toggleHideColumnUa()}>HIDE UA COLUMN</button>
             <button className="btn btn-outline-success top-10" onClick={() => toggleHideColumnEn()}>HIDE EN COLUMN</button>
@@ -42,18 +40,11 @@ const DictionaryOptions: React.FC<any> = ({
 
   return (
     <div className="dictionary-options">
-      <ModalCreatedTest toggle={toggleIsModal} isModal={isModal} />
       <div className="dictionary-options__party">
         <input type="text" placeholder="filter" className="form-control btn-bg" />
       </div>
       <div className="dictionary-options__party">
-        <button className="btn btn-outline-success btn-100" onClick={toggleIsModal}>Add new dictionary</button>
-      </div>
-      <div className="dictionary-options__party">
-        <button className="btn btn-outline-success btn-100">DELETE</button>
-      </div>
-      <div className="dictionary-options__party">
-        <button className="btn btn-outline-success btn-100" onClick={() => toggleList()}>List</button>
+        <button className={BTN_BG} onClick={() => toggleList()}>List</button>
         {
           isList && (
             <Table hover>

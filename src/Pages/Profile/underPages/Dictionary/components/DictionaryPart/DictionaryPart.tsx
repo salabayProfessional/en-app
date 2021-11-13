@@ -1,14 +1,14 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import { BTN_BG } from '../../../../../../classes';
 import { generateString } from '../../../../../../specialFunction/specialFunction';
 
 const TableWords: React.FC<any> = ({
-  activeDictionary, 
+  activeHomeWork, 
   register,
   isHideColumnEn,
   isHideColumnUa
 }) => {
-
   return (
     <>
       <Table>
@@ -22,20 +22,20 @@ const TableWords: React.FC<any> = ({
         </thead>
         <tbody>
           { 
-              activeDictionary?.words.map((word: any, idx: number) => {
+              activeHomeWork?.words.map((word: any, idx: number) => {
                 return (
                   <tr key={generateString()}>
                     <th scope="row">{ idx + 1 }</th>
-                    {!isHideColumnEn? <td className="words-column">{ word.en }</td> : <td className="words-column"></td>}
-                    {!isHideColumnUa? <td className="words-column">{ word.ua }</td> : <td className="words-column"></td>}
-                    <td><input className="form-control" defaultValue="" {...register(`answers${word.en}`)} /></td>
+                    {!isHideColumnEn? <td className="words-column">{ word?.en }</td> : <td className="words-column"></td>}
+                    {!isHideColumnUa? <td className="words-column">{ word?.ua }</td> : <td className="words-column"></td>}
+                    <td><input className="form-control" defaultValue=""  /></td>
                   </tr>
                 )
               })
           }
         </tbody>
       </Table>
-      <button className="btn btn-outline-success btn-100">EDIT THE DICTIONARY</button>
+      <button className={BTN_BG}>PUSH HOMEWORK</button>
     </>
   )
 };
