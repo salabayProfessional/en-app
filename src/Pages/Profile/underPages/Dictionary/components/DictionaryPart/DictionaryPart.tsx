@@ -9,6 +9,7 @@ const TableWords: React.FC<any> = ({
   isHideColumnEn,
   isHideColumnUa
 }) => {
+
   return (
     <>
       <Table>
@@ -28,14 +29,14 @@ const TableWords: React.FC<any> = ({
                     <th scope="row">{ idx + 1 }</th>
                     {!isHideColumnEn? <td className="words-column">{ word?.en }</td> : <td className="words-column"></td>}
                     {!isHideColumnUa? <td className="words-column">{ word?.ua }</td> : <td className="words-column"></td>}
-                    <td><input className="form-control" defaultValue=""  /></td>
+                    {activeHomeWork && <td><input className="form-control" defaultValue="" {...register(word?.en)} /></td>}
                   </tr>
                 )
               })
           }
         </tbody>
       </Table>
-      <button className={BTN_BG}>PUSH HOMEWORK</button>
+      <button className={BTN_BG} type="submit">PUSH HOMEWORK</button>
     </>
   )
 };

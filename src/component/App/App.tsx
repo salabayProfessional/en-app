@@ -11,7 +11,7 @@ import "./App.scss";
 import ErrorBoundry from '../ErrorBoudry/ErrorBoundry';
 
 const App: React.FC = () => {
-
+  console.log(this)
   return (
    <ErrorBoundry>
       <Router>

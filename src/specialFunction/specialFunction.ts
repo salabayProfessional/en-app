@@ -37,7 +37,7 @@ const createTest: any = (words: any) => (amount: number = 10) => {
   let result: any = {name: generateString(), words: []};
 
   for(let i = 0; i < amount ; i++) {
-    randomID.push(Math.floor(Math.random() * 124));
+    randomID.push(Math.floor(Math.random() * 68));
   };
 
   randomID.map((id: any) => result.words.push(words[id]));
@@ -46,7 +46,18 @@ const createTest: any = (words: any) => (amount: number = 10) => {
 };
 
 const checkAnswer = (word: string, answer: string) => {
-  return answer.toLowerCase().includes(word);
+  const splitWord = word.toLowerCase().split("");
+  const splitAnswer = answer.toLowerCase().split("");
+  const necessary = splitWord.length / 100 * 80;
+  let coincidence = 0;
+  for(let i = 0;i < splitAnswer.length;i++) {
+    if(splitAnswer[i] === splitWord[i]) {
+      coincidence += 1;
+    }else {
+      coincidence -= 1
+    };
+  };
+  return coincidence >= necessary;
 };
 
 const makeTest = createTest(allWords);
@@ -57,12 +68,3 @@ export {
   equalAnswerAndWord,
   makeTest,
 }
-
-// const checkAnswer = (word, answer) => {
-//   const splitWord = f(word.split(""));
-//   const splitAnswer = f(answer.split(""));
-//   const coincidence = splitWord.filter((l) => splitAnswer.includes(l));
-//   const necessaryTrue = coincidence.length / 100 * 80;
-//   const result = coincidence.length >= necessaryTrue? true : false;
-//   return {result,splitWord, splitAnswer, coincidence, necessaryTrue, result }
-// };

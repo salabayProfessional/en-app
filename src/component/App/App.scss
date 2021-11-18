@@ -10,6 +10,17 @@ body{
   height:100%; /* force the BODY element to match the height of the HTML element */
 }
 
+body.night {
+  background-color: rgb(36, 36, 36);
+  .btn-success {
+    background-color: #17a2b8;
+  }
+
+  .form-control {
+    background-color: teal;
+  }
+}
+
 .container-fluid {
   position:absolute;
   top:0;

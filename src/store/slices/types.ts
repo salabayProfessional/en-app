@@ -1,5 +1,3 @@
-import { CardTitle } from "reactstrap";
-
 export interface DictionaryReducer {
   dictionaryWords: {en: string, ua: string}[],
   dictionaryTests: {
@@ -46,8 +44,13 @@ export interface TestsReducer {
     type: string,
     from: string,
   } | null,
-  infoTest: null | string,
   allTests: any,
+  allHomeworks: {
+    name: string,
+    words: {
+      en: string, ua: string,
+    }[],
+  }[],
 };
 
 export interface AuthReducer {

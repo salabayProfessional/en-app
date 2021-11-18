@@ -4,8 +4,8 @@ import { TestsReducer } from './types';
 const initialState: TestsReducer = {
   start: false,
   test: null,
-  infoTest: "",
   allTests: [], 
+  allHomeworks: [],
 };
 
 const tests = createSlice({
@@ -21,8 +21,8 @@ const tests = createSlice({
     reset_test: (state) => {
       state.test = null;
     },
-    set_info_id: (state, {payload}) => {
-      state.infoTest = payload;
+    create_homework: (state, {payload}) => {
+      state.allHomeworks = [...state.allHomeworks, payload];
     },
     create_test: (state, {payload}) => {
       state.allTests = [...state.allTests, payload];
@@ -43,7 +43,6 @@ const tests = createSlice({
 export const { 
   set_start_test, 
   set_test, 
-  set_info_id, 
   create_test, 
   reset_test, 
   delete_test, 

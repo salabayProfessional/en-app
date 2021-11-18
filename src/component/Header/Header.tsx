@@ -3,7 +3,14 @@ import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 const LinkList:React.FC<{isMenu: boolean}> = ({isMenu}) => {
-  // const isAuth = useAuth();
+  const [nightIsMode, setNightIsMode] = useState(false);
+  const toggleNightIsMode = () => setNightIsMode(!nightIsMode);
+
+  if(nightIsMode) {
+    document.querySelector("body")?.classList.add("night");
+  } else {
+    document.querySelector("body")?.classList.remove("night");
+  }
 
   return (
     <ul className={`navbar-nav me-auto link-list ${isMenu && "hide"}`}>
@@ -91,6 +98,11 @@ const LinkList:React.FC<{isMenu: boolean}> = ({isMenu}) => {
         >
           profile
         </NavLink>
+      </li>
+      <li className="nav-item">
+        <label className="container-checkbox">
+          <input type="checkbox" id="night-mode" name="night-mode" value="todo" className="top-10" onClick={() => toggleNightIsMode()}/>
+        </label>
       </li>
     </ul>
   )
